@@ -22,4 +22,8 @@
 # The first element 80 is the total weight of team 1, and the second element 0 is the total weight of team 2.
 
 def row_weights(array):
-    return
+    if not all(isinstance(i, int) for i in array):
+        raise TypeError("Array of integers expected")
+    gr_1_weight = sum(array[0::2])
+    gr_2_weight = sum(array[1::2])
+    return [gr_1_weight, gr_2_weight]
